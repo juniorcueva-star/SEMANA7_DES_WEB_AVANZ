@@ -53,7 +53,10 @@ async function apiFetch(url, options = {}) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.M && document.querySelectorAll('.sidenav').length) M.Sidenav.init(document.querySelectorAll('.sidenav'));
+  if (window.M) {
+    if (document.querySelectorAll('.sidenav').length) M.Sidenav.init(document.querySelectorAll('.sidenav'));
+    M.updateTextFields();
+  }
   const session = getValidSession();
   document.querySelectorAll('.sign-out').forEach((link) => link.addEventListener('click', (event) => {
     event.preventDefault();

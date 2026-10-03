@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title">
+  <title id="title">Perfil sin fotografía</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#69727d"/>
+      <stop offset="1" stop-color="#252a31"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="60" fill="url(#g)"/>
+  <circle cx="60" cy="43" r="21" fill="#d5dbe2" opacity=".92"/>
+  <path d="M20 111c3-24 18-38 40-38s37 14 40 38" fill="#d5dbe2" opacity=".92"/>
+</svg>
