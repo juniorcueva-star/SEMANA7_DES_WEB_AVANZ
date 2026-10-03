@@ -1,0 +1,17 @@
+import jwt from 'jsonwebtoken';
+
+export default function authenticate(req, res, next) {
+  const authorization = req.headers.authorization;
+  if (!authorization?.startsWith('Bearer ')) {
+    return res.status(401).json({ message: 'No autorizado' });
+  }
+
+  try {
+    const payload = jwt.verify(authorization.slice(7), process.env.JWT_SECRET);
+    req.userId = payload.sub;
+    req.userRoles = Array.isArray(payload.roles) ? payload.roles : [];
+    return next();
+  } catch {
+    return res.status(401).json({ message: 'Token no válido o caducado' });
+  }
+}

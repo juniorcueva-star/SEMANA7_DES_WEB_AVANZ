@@ -1,0 +1,21 @@
+import userService from '../services/UserService.js';
+
+class UserController {
+  async getAll(req, res, next) {
+    try {
+      res.status(200).json(await userService.getAll());
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async getMe(req, res, next) {
+    try {
+      res.status(200).json(await userService.getById(req.userId));
+    } catch (error) {
+      next(error);
+    }
+  }
+}
+
+export default new UserController();
