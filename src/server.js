@@ -5,6 +5,10 @@ import mongoose from 'mongoose';
 import authRoutes from './routes/auth.routes.js';
 import userRoutes from './routes/users.routes.js';
 import seedRoles from './utils/seedRoles.js';
+import seedUsers from './utils/seedUsers.js';
+import pagesRoutes from './routes/pages.routes.js';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 
 const requiredEnvironment = ['MONGODB_URI', 'JWT_SECRET'];
 const missingEnvironment = requiredEnvironment.filter((key) => !process.env[key]);
@@ -13,11 +17,16 @@ if (missingEnvironment.length) {
 }
 
 const app = express();
+const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+app.set('view engine', 'ejs');
+app.set('views', path.join(projectRoot, 'views'));
+app.use(express.static(path.join(projectRoot, 'public')));
 app.use(cors());
 app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.get('/health', (req, res) => res.status(200).json({ ok: true }));
+app.use('/', pagesRoutes);
 
 app.use((error, req, res, next) => {
   console.error(error);
@@ -29,6 +38,7 @@ try {
   await mongoose.connect(process.env.MONGODB_URI, { autoIndex: true });
   console.log('MongoDB conectado');
   await seedRoles();
+  await seedUsers();
   app.listen(port, () => console.log(`Servidor corriendo en http://localhost:${port}`));
 } catch (error) {
   console.error('No se pudo iniciar la aplicación:', error.message);

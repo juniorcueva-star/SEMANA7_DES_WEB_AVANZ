@@ -1,0 +1,11 @@
+<%- include('partials/head', { title }) %>
+<%- include('partials/nav') %>
+<main class="container page-content" data-requires-role="user">
+  <div class="welcome-panel"><p class="eyebrow">PANEL DE USUARIO</p><h1>¡Bienvenido, <span id="welcomeName">...</span>!</h1><p>Aquí puedes consultar tus datos y administrar tu perfil.</p><a class="btn white blue-text text-darken-4 waves-effect" href="/profile">Ver mi perfil</a></div>
+  <div class="row dashboard-cards">
+    <div class="col s12 m6"><div class="card compact-card"><div class="card-content"><span class="card-title">Mi cuenta</span><p>Revisa y actualiza tus datos personales.</p></div><div class="card-action"><a href="/profile">Abrir perfil</a></div></div></div>
+    <div class="col s12 m6 admin-card admin-link"><div class="card compact-card"><div class="card-content"><span class="card-title">Administración</span><p>Gestiona la lista de usuarios.</p></div><div class="card-action"><a href="/dashboard/admin">Ir al panel admin</a></div></div></div>
+  </div>
+</main>
+<%- include('partials/footer') %>
+<script src="/js/userDashboard.js"></script>

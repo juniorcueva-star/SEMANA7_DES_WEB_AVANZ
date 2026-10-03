@@ -1,0 +1,9 @@
+<%- include('partials/head', { title }) %>
+<%- include('partials/nav') %>
+<main class="container narrow-container page-content" data-requires-role="admin">
+  <div class="page-heading"><p class="eyebrow">ADMINISTRACIÓN</p><h1>Información del usuario</h1><p>Detalle de la cuenta seleccionada.</p></div>
+  <div class="card"><div class="card-content"><p id="detailMessage" class="message" role="status">Cargando información...</p><div id="userDetails" class="detail-list"></div></div></div>
+  <a class="btn-flat" href="/dashboard/admin">← Volver a usuarios</a>
+</main>
+<%- include('partials/footer') %>
+<script src="/js/adminUserDetail.js"></script>

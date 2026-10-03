@@ -16,6 +16,22 @@ class UserController {
       next(error);
     }
   }
+
+  async updateMe(req, res, next) {
+    try {
+      res.status(200).json(await userService.updateMe(req.userId, req.body));
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async getById(req, res, next) {
+    try {
+      res.status(200).json(await userService.getById(req.params.id));
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 export default new UserController();

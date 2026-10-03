@@ -1,0 +1,11 @@
+<%- include('partials/head', { title }) %>
+<%- include('partials/nav') %>
+<main class="container page-content" data-requires-role="admin">
+  <div class="page-heading"><p class="eyebrow">PANEL ADMINISTRADOR</p><h1>Usuarios registrados</h1><p>Consulta las cuentas y sus fechas de registro.</p></div>
+  <div class="card"><div class="card-content">
+    <p id="usersMessage" class="message" role="status">Cargando usuarios...</p>
+    <div class="table-scroll"><table class="highlight responsive-table"><thead><tr><th>Nombre</th><th>Correo</th><th>Teléfono</th><th>Roles</th><th>Registro</th><th>Acción</th></tr></thead><tbody id="usersTable"></tbody></table></div>
+  </div></div>
+</main>
+<%- include('partials/footer') %>
+<script src="/js/adminDashboard.js"></script>

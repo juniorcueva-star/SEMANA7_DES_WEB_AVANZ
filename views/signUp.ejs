@@ -1,0 +1,23 @@
+<%- include('partials/head', { title }) %>
+<main class="container narrow-container page-content">
+  <div class="page-heading"><p class="eyebrow">NUEVA CUENTA</p><h1>Crear cuenta</h1><p>Completa tus datos para registrarte con el rol de usuario.</p></div>
+  <div class="card"><div class="card-content">
+    <form id="signUpForm">
+      <div class="row">
+        <div class="input-field col s12 m6"><input id="name" name="name" required><label for="name">Nombres</label></div>
+        <div class="input-field col s12 m6"><input id="lastName" name="lastName" required><label for="lastName">Apellidos</label></div>
+        <div class="input-field col s12 m6"><input id="phoneNumber" name="phoneNumber" type="tel" required><label for="phoneNumber">Teléfono</label></div>
+        <div class="input-field col s12 m6"><input id="birthdate" name="birthdate" type="date" required><label for="birthdate" class="active">Fecha de nacimiento</label></div>
+        <div class="input-field col s12"><input id="email" name="email" type="email" autocomplete="email" required><label for="email">Correo electrónico</label></div>
+        <div class="input-field col s12"><input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required><label for="password">Contraseña</label><span class="helper-text">Mínimo 8 caracteres, una mayúscula, un número y un símbolo de # $ % & * @.</span></div>
+        <div class="input-field col s12 m6"><input id="url_profile" name="url_profile" type="url"><label for="url_profile">URL de foto de perfil (opcional)</label></div>
+        <div class="input-field col s12 m6"><input id="address" name="address"><label for="address">Dirección (opcional)</label></div>
+      </div>
+      <p id="formMessage" class="message" role="status"></p>
+      <button class="btn-large blue darken-3 waves-effect waves-light" type="submit">Registrarme</button>
+      <a class="btn-flat" href="/signIn">Volver a iniciar sesión</a>
+    </form>
+  </div></div>
+</main>
+<%- include('partials/footer') %>
+<script src="/js/signUp.js"></script>

@@ -1,0 +1,48 @@
+:root { --navy: #10233f; --blue: #1565c0; --ink: #18304b; --muted: #66778c; --pale: #edf4fb; }
+html, body { min-height: 100%; }
+body { display: flex; flex-direction: column; color: var(--ink); background: #f5f8fc; font-family: Inter, "Segoe UI", sans-serif; }
+main { flex: 1 0 auto; }
+nav { box-shadow: 0 4px 18px #10233f1a; }
+nav .brand-logo { font-size: 1.45rem; font-weight: 700; letter-spacing: -.03em; }
+.page-content { padding-top: 3.3rem; padding-bottom: 3.5rem; }
+.narrow-container { max-width: 860px; }
+.page-heading { margin-bottom: 1.6rem; }
+h1 { color: var(--navy); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -.045em; margin: .3rem 0 .7rem; }
+.page-heading p, .intro-panel p, .welcome-panel p { color: var(--muted); line-height: 1.7; }
+.eyebrow { color: var(--blue) !important; font-size: .75rem; font-weight: 700; letter-spacing: .16em; margin-bottom: .5rem; }
+.card { border-radius: 16px; box-shadow: 0 12px 35px #16335412; overflow: hidden; }
+.card-content { padding: 28px !important; }
+.card-title { color: var(--navy); font-weight: 700 !important; }
+.auth-wrap { max-width: 1080px; padding-top: 6vh; padding-bottom: 4vh; }
+.auth-row { min-height: 520px; }
+.intro-panel { padding: 2rem 3rem !important; }
+.intro-panel h1 { font-size: clamp(2.6rem, 5vw, 4.1rem); }
+.intro-panel p:not(.eyebrow) { max-width: 420px; font-size: 1.08rem; }
+.auth-card { width: 100%; max-width: 470px; margin: 0 auto; }
+.auth-card .card-content { padding: 34px !important; }
+.full-width { width: 100%; }
+.signup-hint { margin-top: 1.5rem; }
+.message { min-height: 1.35rem; color: #b3261e; }
+.message.success { color: #287a49; }
+.welcome-panel { padding: 2.5rem 3rem; border-radius: 20px; background: linear-gradient(125deg, #e5f1ff, #f7fbff 72%); border: 1px solid #d8e8f8; }
+.welcome-panel h1 { margin-top: .2rem; }
+.welcome-panel p { margin: .7rem 0 1.5rem; }
+.dashboard-cards { margin-top: 1.3rem; }
+.compact-card { min-height: 175px; }
+.table-scroll { overflow-x: auto; }
+table th { color: var(--navy); white-space: nowrap; }
+table td { vertical-align: middle; }
+.profile-summary { display: flex; align-items: center; gap: 18px; margin-bottom: 2rem; padding: 1rem; background: var(--pale); border-radius: 14px; }
+.profile-summary img { width: 88px; height: 88px; object-fit: cover; border-radius: 50%; background: #d7e7f7; }
+.profile-summary strong { color: var(--navy); font-size: 1.15rem; }
+.profile-summary p { margin: .3rem 0; }
+.muted { color: var(--muted); }
+.detail-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.detail-item { padding: 15px; background: #f5f8fc; border-radius: 10px; overflow-wrap: anywhere; }
+.detail-item span { display: block; color: var(--muted); font-size: .8rem; margin-bottom: 5px; }
+.error-page { padding-top: 15vh; padding-bottom: 10vh; }
+.error-page h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+.footer-space { padding: 18px 0; }
+.footer-space .container { color: #d6e5f8; font-size: .9rem; }
+.sidenav .admin-link, .admin-link { display: none; }
+@media (max-width: 600px) { .auth-wrap { padding-top: 2rem; } .intro-panel { padding: 1rem 1.5rem !important; } .intro-panel h1 { font-size: 2.5rem; } .card-content { padding: 22px !important; } .welcome-panel { padding: 1.7rem; } .detail-list { grid-template-columns: 1fr; } }

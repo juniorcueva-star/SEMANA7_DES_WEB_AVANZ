@@ -1,0 +1,19 @@
+<%- include('partials/head', { title }) %>
+<%- include('partials/nav') %>
+<main class="container narrow-container page-content" data-requires-role="user">
+  <div class="page-heading"><p class="eyebrow">MI CUENTA</p><h1>Mi perfil</h1><p>Consulta y actualiza tu información personal.</p></div>
+  <div class="card"><div class="card-content">
+    <div class="profile-summary"><img id="profileImage" src="https://placehold.co/96x96?text=Perfil" alt="Foto de perfil"><div><strong id="profileName">Cargando perfil...</strong><p id="profileRole" class="muted"></p><p id="profileAge" class="muted"></p></div></div>
+    <form id="profileForm"><div class="row">
+      <div class="input-field col s12 m6"><input id="name" name="name" required><label for="name">Nombres</label></div>
+      <div class="input-field col s12 m6"><input id="lastName" name="lastName" required><label for="lastName">Apellidos</label></div>
+      <div class="input-field col s12 m6"><input id="email" name="email" type="email" disabled><label for="email" class="active">Correo electrónico</label></div>
+      <div class="input-field col s12 m6"><input id="phoneNumber" name="phoneNumber" type="tel" required><label for="phoneNumber">Teléfono</label></div>
+      <div class="input-field col s12 m6"><input id="birthdate" name="birthdate" type="date" required><label for="birthdate" class="active">Fecha de nacimiento</label></div>
+      <div class="input-field col s12 m6"><input id="url_profile" name="url_profile" type="url"><label for="url_profile">URL de foto</label></div>
+      <div class="input-field col s12"><input id="address" name="address"><label for="address">Dirección</label></div>
+    </div><p id="formMessage" class="message" role="status"></p><button class="btn blue darken-3 waves-effect" type="submit">Guardar cambios</button></form>
+  </div></div>
+</main>
+<%- include('partials/footer') %>
+<script src="/js/profile.js"></script>
